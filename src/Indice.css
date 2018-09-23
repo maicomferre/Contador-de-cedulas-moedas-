@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/*
+	@Developed By: Maicom Ferreira;
+	@Date: 17/06/2018 - 12:25 AM
+	@Function: Cascade Style Sheets | description: Style;
+	
+	Exercise of the Uri 1018 converted to web page.
+*/
+.Title{
+	position:relative;
+	margin:0 auto;
+}
+input[type="text"]{
+	position:relative;
+	width:50%;
+	height:30px;
+	font-size:26px;
+	box-shadow:3px 3px 8px rgba(100,100,100,.2);
+	-moz-box-shadow:3px 3px 8px rgba(100,100,100,.2);
+	-webkit-box-shadow:3px 3px 8px rgba(100,100,100,.2);
+	-o-box-shadow:3px 3px 8px rgba(100,100,100,.2);
+	-khtml-box-shadow:3px 3px 8px rgba(100,100,100,.2);
+	-ms-box-shadow:3px 3px 8px rgba(100,100,100,.2);	
+	border-radius:6px;
+}
+.Notas{
+	position:relative;
+	top:10px;
+	left:20px;
+	width:calc(100% - 40px);
+	border:1px solid #000000;
+	min-height:400px;
+	padding:10px;
+	display:inline-block;
+	
+}
+.Cedula{
+	padding:5px;
+	margin:10px;
+	width:250px;
+	height:80px;
+	border:1px solid #FFFFFF;
+	box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-moz-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-webkit-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-o-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-khtml-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-ms-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	float:left;
+}
+.Moeda{
+	padding:5px;
+	margin:10px;
+	width:80px;
+	height:80px;
+	border-radius:60px;
+	border:1px solid #595959;
+	box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-moz-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-webkit-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-o-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-khtml-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-ms-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	float:left;	
+	
+}
+#CedulasPropriedade{
+	/*background-image:url('100.jpg');*/
+	background-size:100%;
+}
+#QtdsNotas{
+	position:relative;
+	top:-15px;
+	left:-15px;
+	border-radius:8px;
+	width:30px;
+	background-color:#00FF00;
+	border:1px solid #000000;
+	box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-moz-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-webkit-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-o-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-khtml-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	-ms-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	font-size:18px;
+	padding:10px;
+}
