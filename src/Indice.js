@@ -16,12 +16,13 @@ function UpDateInfo(value)
 {
 	if(value2 === value)return false;
 	value2 = value;
-	
+
 	if(value.indexOf(',') != -1)
 	{
 		value = value.replace(',','.');
 		value = parseFloat(value);
 	}
+	
 	if(parseFloat(value) < 0.01 )
 	{
 		$('.Notas').html('');
@@ -146,3 +147,9 @@ function CheckNumber(value)
 		$("#nota").hide();
 	}
 }
+//Events
+document.getElementById('ed').addEventListener('keyup',function(e){
+	var i = document.getElementById('ed').value;
+	CheckNumber(i)
+	UpDateInfo(i);
+});

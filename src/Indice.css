@@ -46,6 +46,7 @@ input[type="text"]{
 	-o-box-shadow:2px 2px 8px rgba(100,100,100,.2);
 	-khtml-box-shadow:2px 2px 8px rgba(100,100,100,.2);
 	-ms-box-shadow:2px 2px 8px rgba(100,100,100,.2);
+	background-size:100%;
 	float:left;
 }
 .Moeda{
@@ -64,10 +65,6 @@ input[type="text"]{
 	float:left;	
 	
 }
-#CedulasPropriedade{
-	/*background-image:url('100.jpg');*/
-	background-size:100%;
-}
 #QtdsNotas{
 	position:relative;
 	top:-15px;
@@ -84,4 +81,7 @@ input[type="text"]{
 	-ms-box-shadow:2px 2px 8px rgba(100,100,100,.2);
 	font-size:18px;
 	padding:10px;
+}
+#nota{
+	color:#AA0000;
 }
