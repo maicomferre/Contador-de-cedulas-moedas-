@@ -10,7 +10,7 @@
 
 var ICON_TYPE = 'Real';
 var value2 = 0;
-var SobrouMostrado = false;
+var LeftoverShowed = false;
 
 function UpDateInfo(value)
 {
@@ -117,42 +117,36 @@ function UpDateInfo(value)
 	
 	$('.Notas').html('');
 	$('.Notas').html(html);
-	CheckExtr(value);
+	CheckLeftover(value);
 
 }
-function CheckExtr(value)
+function CheckLeftover(value)
 {
 	if(parseFloat(value) > 0.009)
 	{
-		if(SobrouMostrado == false)
+		if(LeftoverShowed == false)
 		{
 			$('.Sobrou').show();
-			SobrouMostrado=true;
+			LeftoverShowed=true;
 		}
 		$('.Sobrou').html('Sobraram ' + parseFloat(value.toFixed(2)) * 100 + " Centavo(s)");
 	}
 	else
 	{
-		$('.Sobrou').html('');
 		$('.Sobrou').hide();
-		SobrouMostrado = false;
+		LeftoverShowed = false;
 	}	
 }
-function CheckNumber(value)
+function CheckIfNumberIsBig(value)
 {
 	if(value > 100000000)
-	{
-		$("#nota").html("</b>Atenção!</b>: Em numeros acima de 100 milhões, dependendo do computador do navegador e dos processos em execução, as notas podem demorar a aparecer o resultado!");
 		$("#nota").show();
-	}
 	else
-	{
 		$("#nota").hide();
-	}
 }
 //Events
 document.getElementById('input').addEventListener('keyup',function(e){
 	var val = document.getElementById('input').value;
-	CheckNumber(val);
+	CheckIfNumberIsBig(val);
 	UpDateInfo(val);
 });

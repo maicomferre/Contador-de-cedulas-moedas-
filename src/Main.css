@@ -25,7 +25,7 @@
 	position:relative;
 	margin: 0 auto;
 	width:calc(100% - 40px);
-	border:1px solid #000000;
+	border:1px solid #CCC;
 	min-height:400px;
 	padding:10px;
 	display:inline-block;
