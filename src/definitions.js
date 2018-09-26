@@ -1,11 +1,10 @@
 //Definitions
 var NOTAS = {};
 
-
 //REAL
 NOTAS['ICON'] = {};
 NOTAS['ICON']['Real'] = {};
-
+NOTAS['ICON']['Dolar'] = {};
 
 //Nomes
 

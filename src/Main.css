@@ -6,12 +6,10 @@
 	
 	Exercise of the Uri 1018 converted to web page.
 */
-.Title{
+
+.input{
 	position:relative;
-	margin:0 auto;
-}
-input[type="text"]{
-	position:relative;
+	margin: 0 auto;
 	width:50%;
 	height:30px;
 	font-size:26px;
@@ -19,14 +17,13 @@ input[type="text"]{
 	-moz-box-shadow:3px 3px 8px rgba(100,100,100,.2);
 	-webkit-box-shadow:3px 3px 8px rgba(100,100,100,.2);
 	-o-box-shadow:3px 3px 8px rgba(100,100,100,.2);
-	-khtml-box-shadow:3px 3px 8px rgba(100,100,100,.2);
-	-ms-box-shadow:3px 3px 8px rgba(100,100,100,.2);	
+	-khtml-box-shadow:3px 3px 8px rgba(100,100,100,.2);	
 	border-radius:6px;
 }
 .Notas{
-	position:relative;
 	top:10px;
-	left:20px;
+	position:relative;
+	margin: 0 auto;
 	width:calc(100% - 40px);
 	border:1px solid #000000;
 	min-height:400px;

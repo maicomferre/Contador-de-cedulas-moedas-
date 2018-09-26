@@ -100,8 +100,10 @@ function UpDateInfo(value)
 		NOTAS['value'][10]++;
 		value -= 0.05;
 	}
+	
 	var html = "";
 	$('.Notas').html('');
+	
 	for(var i=0; i<11; i++)
 	{
 		if(NOTAS['value'][i] > 0)
@@ -112,6 +114,7 @@ function UpDateInfo(value)
 			<span id="QtdsNotas">'+NOTAS['value'][i]+'</span></div>';
 		}
 	}
+	
 	$('.Notas').html('');
 	$('.Notas').html(html);
 	CheckExtr(value);
@@ -148,8 +151,8 @@ function CheckNumber(value)
 	}
 }
 //Events
-document.getElementById('ed').addEventListener('keyup',function(e){
-	var i = document.getElementById('ed').value;
-	CheckNumber(i)
-	UpDateInfo(i);
+document.getElementById('input').addEventListener('keyup',function(e){
+	var val = document.getElementById('input').value;
+	CheckNumber(val);
+	UpDateInfo(val);
 });
