@@ -20,15 +20,18 @@ function UpDateInfo(value)
 	if(value.indexOf(',') != -1)
 	{
 		value = value.replace(',','.');
-		value = parseFloat(value);
 	}
 	
-	if(parseFloat(value) < 0.01 )
+	value = parseFloat(value);
+	
+	if(value < 0.01 )
 	{
 		$('.Notas').html('');
 		CheckExtr(value);
 		return false;	
 	}
+	
+	value += 0.001;//Fator correção.		
 	
 	NOTAS['value'] = {};
 	NOTAS['value'][0]  = 0;
@@ -42,8 +45,6 @@ function UpDateInfo(value)
 	NOTAS['value'][8]  = 0;
 	NOTAS['value'][9]  = 0;
 	NOTAS['value'][10] = 0;
-
-	value = parseFloat(value) + 0.001;//Fator correção.
 	
 	while(value >= 100)
 	{
@@ -109,9 +110,9 @@ function UpDateInfo(value)
 		if(NOTAS['value'][i] > 0)
 		{
 			var type = (i < 6) ? ("Cedula") : ("Moeda");
-			html +='<div class="'+type+'" id="'+i+'" \
-			style="background-image:url(\'src/'+NOTAS['ICON'][ICON_TYPE]['IMG'][i] +'\');">\
-			<span id="QtdsNotas">'+NOTAS['value'][i]+'</span></div>';
+			html +='<div title="'+NOTAS['ICON']['Real']['Ext'][i]+'" class="' + type + '" id="'+ i +'" \
+			style="background-image:url(\'src/' + NOTAS['ICON'][ICON_TYPE]['IMG'][i] + '\');">\
+			<span id="QtdsNotas"> ' + NOTAS['value'][i] + '</span></div>';
 		}
 	}
 	

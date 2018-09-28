@@ -9,13 +9,13 @@ NOTAS['ICON']['Dolar'] = {};
 //Nomes
 
 NOTAS['ICON']['Real']['Ext'] = {};
-NOTAS['ICON']['Real']['Ext'][0]  = "CEM";
-NOTAS['ICON']['Real']['Ext'][1]  = "Cinquenta";
-NOTAS['ICON']['Real']['Ext'][2]  = "Vinte e Cinco";
-NOTAS['ICON']['Real']['Ext'][3]  = "Dez";
-NOTAS['ICON']['Real']['Ext'][4]  = "Cinco";
-NOTAS['ICON']['Real']['Ext'][5]  = "Dois";
-NOTAS['ICON']['Real']['Ext'][6]  = "Um";
+NOTAS['ICON']['Real']['Ext'][0]  = "CEM Reais";
+NOTAS['ICON']['Real']['Ext'][1]  = "Cinquenta Reais";
+NOTAS['ICON']['Real']['Ext'][2]  = "Vinte e Cinco Reais";
+NOTAS['ICON']['Real']['Ext'][3]  = "Dez Reais";
+NOTAS['ICON']['Real']['Ext'][4]  = "Cinco Reais";
+NOTAS['ICON']['Real']['Ext'][5]  = "Dois Reais";
+NOTAS['ICON']['Real']['Ext'][6]  = "Um Real";
 NOTAS['ICON']['Real']['Ext'][7]  = "Cinquenta Centavos";
 NOTAS['ICON']['Real']['Ext'][8]  = "Vinte e Cinco Centavos";
 NOTAS['ICON']['Real']['Ext'][9]  = "Dez Centavos";
