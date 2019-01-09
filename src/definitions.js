@@ -1,39 +1,58 @@
 //Definitions
 var NOTAS = {};
+var ICON_TYPE = null;
+var SELECTED = {};
+var antDoubleCheck = 0;
+var MenuPasso=0;
+var LeftoverShowed = false;
 
-//REAL
-NOTAS['ICON'] = {};
-NOTAS['ICON']['Real'] = {};
-NOTAS['ICON']['Dolar'] = {};
+//Criando
+NOTAS['Real'] = {};
+NOTAS['Dolar'] = {};
 
-//Nomes
 
-NOTAS['ICON']['Real']['Ext'] = {};
-NOTAS['ICON']['Real']['Ext'][0]  = "CEM Reais";
-NOTAS['ICON']['Real']['Ext'][1]  = "Cinquenta Reais";
-NOTAS['ICON']['Real']['Ext'][2]  = "Vinte e Cinco Reais";
-NOTAS['ICON']['Real']['Ext'][3]  = "Dez Reais";
-NOTAS['ICON']['Real']['Ext'][4]  = "Cinco Reais";
-NOTAS['ICON']['Real']['Ext'][5]  = "Dois Reais";
-NOTAS['ICON']['Real']['Ext'][6]  = "Um Real";
-NOTAS['ICON']['Real']['Ext'][7]  = "Cinquenta Centavos";
-NOTAS['ICON']['Real']['Ext'][8]  = "Vinte e Cinco Centavos";
-NOTAS['ICON']['Real']['Ext'][9]  = "Dez Centavos";
-NOTAS['ICON']['Real']['Ext'][10] = "Cinco Centavos";
+//global
+NOTAS['value'] = [0,0,0,0,0,0,0,0,0,0,0];
+//Imagens Local
+NOTAS['Real'] ['img_src'] = "Real/";
+NOTAS['Dolar']['img_src'] = "Dolar/";
+NOTAS['all'] = ["100.jpg","50.jpg","20.jpg","10.png","5.jpg","2.jpg","1m.jpg","50m.jpg","25m.jpg","10m.jpg","05m.jpg","1m.jpg"];
 
-//Imagens
+NOTAS['Real']['notas'] = [100,50,20,10,5,2,1];
+NOTAS['Real']['moedas'] = [.50,.25,.10,.05];
 
-NOTAS['ICON']['Real']['IMG'] = {};
-NOTAS['ICON']['Real']['IMG'][0]  = "Real/100.jpg";
-NOTAS['ICON']['Real']['IMG'][1]  = "Real/50.jpg";
-NOTAS['ICON']['Real']['IMG'][2]  = "Real/20.jpg";
-NOTAS['ICON']['Real']['IMG'][3]  = "Real/10.png";
-NOTAS['ICON']['Real']['IMG'][4]  = "Real/5.jpg";
-NOTAS['ICON']['Real']['IMG'][5]  = "Real/2.jpg";
-NOTAS['ICON']['Real']['IMG'][6]  = "Real/1m.jpg";
-NOTAS['ICON']['Real']['IMG'][7]  = "Real/50m.jpg";
-NOTAS['ICON']['Real']['IMG'][8]  = "Real/25m.jpg";
-NOTAS['ICON']['Real']['IMG'][9]  = "Real/10m.jpg";
-NOTAS['ICON']['Real']['IMG'][10] = "Real/05m.jpg";
+//Dolar
+NOTAS['Dolar']['notas'] = [100,50,20,10,5,1];
+NOTAS['Dolar']['moeda'] = [.50,.25,.10,.05,0.01];
 
-//DOLAR
+//Translation
+var SETTINGS = {};
+
+SETTINGS['lang'] = 'en';
+
+SETTINGS['en'] = {
+	inputplaceholder:"Please, insert a value",
+	menu1Title:"Please, select your language:",
+	menu2Title:"Please, select a coin:",
+}
+
+SETTINGS['pt-br'] = {
+	inputplaceholder:"Por favor, insira um valor:",
+	menu1Title:"Por favor, selecione uma linguagem:",
+	menu2Title:"Por favor, selecione uma moeda:",
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,146 +8,133 @@
 	Exercise of the Uri 1018 converted to web page.
 */
 
-var ICON_TYPE = 'Real';
-var value2 = 0;
-var LeftoverShowed = false;
-
 function UpDateInfo(value)
 {
-	if(value2 === value)return false;
-	value2 = value;
-
-	if(value.indexOf(',') != -1)
-	{
+	if(antDoubleCheck === value)return;
+	antDoubleCheck = value;
+	
+	if(value.indexOf(',') != -1){
 		value = value.replace(',','.');
 	}
 	
-	value = parseFloat(value);
+	if(value > 100000000000000000000){
+		$("#nota").show();
+		return false;
+	}else
+		$("#nota").hide();	
 	
-	if(value < 0.01 )
-	{
+	value = roundNumber(parseFloat(value));
+	
+	if(value < 0.01 || isNaN(value)){
 		$('.Notas').html('');
-		CheckExtr(value);
+		checkLeftOver(value);
 		return false;	
 	}
-	
-	value += 0.001;//Fator correção.		
-	
-	NOTAS['value'] = {};
-	NOTAS['value'][0]  = 0;
-	NOTAS['value'][1]  = 0;
-	NOTAS['value'][2]  = 0;
-	NOTAS['value'][3]  = 0;
-	NOTAS['value'][4]  = 0;
-	NOTAS['value'][5]  = 0;
-	NOTAS['value'][6]  = 0;
-	NOTAS['value'][7]  = 0;
-	NOTAS['value'][8]  = 0;
-	NOTAS['value'][9]  = 0;
-	NOTAS['value'][10] = 0;
-	
-	while(value >= 100)
-	{
-		NOTAS['value'][0]++;
-		value -= 100;
+		
+	var indice = 0;
+	for(var i=0; i<NOTAS[ICON_TYPE]['notas'].length && value > 0; i++,indice++){
+		if(value / NOTAS[ICON_TYPE]['notas'][i] <= 0)continue;
+		NOTAS['value'][indice] = parseInt(value / NOTAS[ICON_TYPE]['notas'][i]);
+		value = (value % NOTAS[ICON_TYPE]['notas'][i]);
 	}
-	while(value >= 50)
-	{
-		NOTAS['value'][1]++;
-		value -= 50;
-	}
-	while(value >= 20)
-	{
-		NOTAS['value'][2]++;
-		value -= 20;
-	}
-	while(value >= 10)
-	{
-		NOTAS['value'][3]++;
-		value -= 10;
-	}
-	while(value >= 5)
-	{
-		NOTAS['value'][4]++;
-		value -= 5;
-	}
-	while(value >= 2)
-	{
-		NOTAS['value'][5]++;
-		value -= 2;
-	}	
-	while(value >= 1)
-	{
-		NOTAS['value'][6]++;
-		value -= 1;
-	}
-	while(value >= 0.50)
-	{
-		NOTAS['value'][7]++;
-		value -= 0.50;
-	}
-	while(value >= 0.25)
-	{
-		NOTAS['value'][8]++;
-		value -= 0.25;
-	}
-	while(value >= 0.10)
-	{
-		NOTAS['value'][9]++;
-		value -= 0.10;
-	}
-	while(value >= 0.05)
-	{
-		NOTAS['value'][10]++;
-		value -= 0.05;
+	indice = NOTAS[ICON_TYPE]['notas'].length;
+
+	for(var i=0; i<NOTAS[ICON_TYPE]['moedas'].length; i++,indice++){
+		if(parseInt(value / NOTAS[ICON_TYPE]['notas'][i]) > 0.01)continue;
+		NOTAS['value'][indice] = parseInt(value / NOTAS[ICON_TYPE]['moedas'][i]);
+		value = roundNumber(value % NOTAS[ICON_TYPE]['moedas'][i]);
 	}
 	
 	var html = "";
 	$('.Notas').html('');
 	
-	for(var i=0; i<11; i++)
-	{
-		if(NOTAS['value'][i] > 0)
-		{
-			var type = (i < 6) ? ("Cedula") : ("Moeda");
-			html +='<div title="'+NOTAS['ICON']['Real']['Ext'][i]+'" class="' + type + '" id="'+ i +'" \
-			style="background-image:url(\'src/' + NOTAS['ICON'][ICON_TYPE]['IMG'][i] + '\');">\
-			<span id="QtdsNotas"> ' + NOTAS['value'][i] + '</span></div>';
+	for(var i=0; i<11; i++){
+		if(NOTAS['value'][i] > 0){
+			var img = "background-image:url('src/"+NOTAS[ICON_TYPE]['img_src']+NOTAS['all'][i]+"');";
+			var type = (i < 6) ? ("Cedula") : ("Moeda");	
+			var qntnotas = NOTAS['value'][i].toLocaleString(SETTINGS['lang']);
+			html +='<div class="'+type+'" id="'+i+'" style="'+img+'"><span id="QtdsNotas">'+qntnotas+'</span></div>';
 		}
 	}
-	
+	NOTAS['value'] = [0,0,0,0,0,0,0,0,0,0,0];
 	$('.Notas').html('');
 	$('.Notas').html(html);
-	CheckLeftover(value);
-
+	checkLeftOver(value);
 }
-function CheckLeftover(value)
-{
-	if(parseFloat(value) > 0.009)
-	{
-		if(LeftoverShowed == false)
-		{
+function checkLeftOver(value){
+	if(parseFloat(value) > 0.009){
+		if(LeftoverShowed == false){
 			$('.Sobrou').show();
 			LeftoverShowed=true;
 		}
-		$('.Sobrou').html('Sobraram ' + parseFloat(value.toFixed(2)) * 100 + " Centavo(s)");
+
+		$('.Sobrou').html('» Sobraram {0} Centavo(s)'.format(parseFloat(value.toFixed(2)) * 100));
 	}
-	else
-	{
+	else{
 		$('.Sobrou').hide();
 		LeftoverShowed = false;
-	}	
-}
-function CheckIfNumberIsBig(value)
-{
-	if(value > 100000000)
-		$("#nota").show();
-	else
-		$("#nota").hide();
+	}
 }
 //Events
 document.getElementById('input').addEventListener('keyup',function(e){
 	var val = document.getElementById('input').value;
-	CheckIfNumberIsBig(val);
 	UpDateInfo(val);
 });
+$(document).ready(function(){	
+	$('.rqst_0').show();
+	$('.fundo').show();
+	MenuPasso = 0;
+});
+
+var max = 2;
+function Next()
+{
+	$('.rqst_'+MenuPasso).slideToggle();
+	MenuPasso++;
+	setTimeout(function(){
+		$('.rqst_'+MenuPasso).slideToggle();
+		$('.rqst_'+i).hide();
+	},500);
+	
+	if(MenuPasso == max){
+		for(var i=0; i<MenuPasso; i++){
+			$('.rqst_'+i).hide();
+		}
+		$('.fundo').hide();
+		setTimeout(function(){
+			$('.content').show();
+		},500);
+	}
+	
+}
+function openMenu(){
+	$('.rqst_0').show();
+	$('.fundo').show();
+	$('.content').hide();
+	MenuPasso = 0;	
+	
+}
+function setSetting(param0,param1) {
+	switch(param0) {
+		case "lang":
+			if(SETTINGS['lang'] == param1)break;
+			$("#h1_0title").html(SETTINGS[param1].menu1Title);
+			$("#h1_1title").html(SETTINGS[param1].menu2Title);
+			$("#input").attr('placeholder',SETTINGS[param1].inputplaceholder);
+			SETTINGS['lang'] = param1;
+			break;
+		case "coin":
+			ICON_TYPE = param1;
+			break;
+		default:
+			console.log("javascript error: function setSetting('"+param0+"','"+param1+"'); The first parameter is invalid.");
+			return false;
+	}
+	
+}
+//functions 
+function roundNumber (rnum) {
+   return Math.round(rnum*Math.pow(10,2))/Math.pow(10,2);
+ 
+}
+

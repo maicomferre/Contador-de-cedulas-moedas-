@@ -1,11 +1,10 @@
 @charset "UTF-8";
-/*
-	@Developed By: Maicom Ferreira;
-	@Date: 17/06/2018 - 12:25 AM
-	@Function: Cascade Style Sheets | description: Style;
-	
-	Exercise of the Uri 1018 converted to web page.
-*/
+body{
+	background-color:#008040;
+	background-size:100%;
+	min-height:720px;
+	overflow:hidden;
+}
 
 .input{
 	position:relative;
@@ -81,4 +80,80 @@
 }
 #nota{
 	color:#AA0000;
+}
+.fundo{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,.4);
+	z-index:100;
+}
+.mg{
+	position:relative;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	z-index:101;
+}
+.rqst_0,.rqst_1,.rqst_2{
+	position:relative;
+	border-radius:6px;
+	background-color:#408080;
+	position:relative;
+	width:60vw;
+	height:70vh;
+	box-shadow:3px 3px 19px #080;
+	-moz-box-shadow:3px 3px 19px #080;
+	-webkit-box-shadow:3px 3px 19px #080;
+	-o-box-shadow:3px 3px 19px #080;
+	-ms-box-shadow:3px 3px 19px #080;
+	-khtml-box-shadow:3px 3px 19px #080;
+	z-index:102;
+}
+
+.opt_option{
+	position:relative;
+	width:55vw;
+	height:40px;
+	font-size:26px;
+	text-align:center;
+	background-color:#FFF;
+	padding:15px;
+	margin:15px auto;
+	border-radius:4px;
+}
+@media screen and (max-width:700px){
+	.opt_option{
+		width:calc(85% - 15px);
+		margin:5px;
+	}	
+}
+.opt_option:hover{
+	background-color:#00FF00;
+	padding:16px;
+	cursor:pointer;
+	font-size:27px;
+}
+.opt_option:active{
+	background-color:#008000;
+	padding:15px;
+	font-size:24px;	
+	font-weight:bold;
+	
+}
+h1{
+	text-align:center;
+}
+button{
+	position:absolute;
+	right:20px;
+	font-size:26px;
+	font-weight:bold;
+}
+button:hover{
+	background-color:#80FF00;
+	cursor:pointer;
 }

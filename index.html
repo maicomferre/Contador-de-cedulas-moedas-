@@ -4,21 +4,44 @@
 		<title>Contador de Notas</title>
 		<meta charset="utf-8" />
 		<script type="text/javascript" src="src/jquery-3.1.0.min.js"></script>
-		<script type="text/javascript" defer src="src/definitions.js" ></script>
+		<script type="text/javascript" defer src="src/definitions.js" >	
+		</script>
 		<script type="text/javascript" defer src="src/Main.js"></script>
-		<link rel="stylesheet" type="text/css" href="src/Main.css">
+		<link rel="stylesheet" type="text/css" href="src/Main.css" /> 
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
 	</head>
 	<body>
-		<input type="text" placeholder="Por favor, digite um valor." autocomplete="off" autofocus="true" id="input" class="input" /><br />
-		<span id="nota" style="display:none;">
-			</b>Atenção!</b>
-			: Em numeros acima de 100 milhões,
-			dependendo do computador do navegador
-			e dos processos em execução, as notas
-			podem demorar a aparecer o resultado!
-		</span>
-		<div class="Notas"></div>
-		<br /><br />
-		<p class="Sobrou"></p>
+		<div class="fundo"></div>
+		<div class="mg">
+			<div class="rqst_0">
+				<h1 id="h1_0title">Please, select your language: </h1><br />
+				<div class="opt_option" id="opt00" onClick="setSetting('lang','en');Next();">
+					English
+				</div>
+				<div class="opt_option" id="opt01" onClick="setSetting('lang','pt-br');Next();">
+					Português
+				</div>
+			</div>
+			<div class="rqst_1" style="display:none;">
+				<h1 id="h1_1title"></h1><br />
+				<div class="opt_option" id="opt10" onClick="setSetting('coin','Dolar');Next();">
+					Dolar
+				</div>
+				<div class="opt_option" id="opt11" onClick="setSetting('coin','Real');Next();">
+					Real
+				</div>
+			</div>
+		</div>
+		<div class="content" style="display:none;">
+			<button onClick="openMenu();">Ξ</button>
+			<input type="text" placeholder="[ERROR JAVASCRIPT]" autocomplete="off" autofocus="true" id="input" class="input" /><br />
+			<span id="nota" style="display:none;">
+				</b>Atenção!</b>
+				: Valor máximo 100000000000000000000,00
+			</span>
+			<div class="Notas"></div>
+			<br /><br />
+			<p class="Sobrou"></p>
+		</div>
 	</body>
 </html>	
