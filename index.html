@@ -4,8 +4,8 @@
 		<title>Contador de Notas</title>
 		<meta charset="utf-8" />
 		<script type="text/javascript" src="src/jquery-3.1.0.min.js"></script>
-		<script type="text/javascript" defer src="src/definitions.js" >	
-		</script>
+		<script type="text/javascript" defer src="src/definitions.js" ></script>
+		<script type="text/javascript" src="src/functions.js"></script>
 		<script type="text/javascript" defer src="src/Main.js"></script>
 		<link rel="stylesheet" type="text/css" href="src/Main.css" /> 
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
@@ -35,13 +35,12 @@
 		<div class="content" style="display:none;">
 			<button onClick="openMenu();">Ξ</button>
 			<input type="text" placeholder="[ERROR JAVASCRIPT]" autocomplete="off" autofocus="true" id="input" class="input" /><br />
-			<span id="nota" style="display:none;">
-				</b>Atenção!</b>
-				: Valor máximo 100000000000000000000,00
-			</span>
+			<span id="nota" style="display:none;"></span>
 			<div class="Notas"></div>
 			<br /><br />
 			<p class="Sobrou"></p>
+			<br/>
+			<p>Versão: 0.0.2</p>
 		</div>
 	</body>
 </html>	
