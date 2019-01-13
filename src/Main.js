@@ -52,10 +52,11 @@ function UpDateInfo(value)
 		if(NOTAS['value'][i] == 0)continue;
 		var img = "background-image:url('src/"+ NOTAS[ICON_TYPE]['img_src']+NOTAS['all'][i] +"');";
 		var type = (i < NOTAS[ICON_TYPE]['type']) ? ("Cedula") : ("Moeda");	
+		
 		var qntnotas = NOTAS['value'][i].toLocaleString(SETTINGS['lang']);
 		html +='<div class="'+type+'" id="'+i+'" style="'+img+'"><span id="QtdsNotas">'+qntnotas+'</span></div>';
 	}
-	NOTAS['value'] = [0,0,0,0,0,0,0,0,0,0,0];
+	NOTAS['value'] = [0,0,0,0,0,0,0,0,0,0,0,0];
 	$('.Notas').html('');
 	$('.Notas').html(html);
 	checkLeftOver(value);

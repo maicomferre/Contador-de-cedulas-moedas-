@@ -13,7 +13,7 @@ NOTAS['Dolar'] = {};
 
 
 //global
-NOTAS['value'] = [0,0,0,0,0,0,0,0,0,0,0];
+NOTAS['value'] = [0,0,0,0,0,0,0,0,0,0,0,0];
 //Imagens Local
 NOTAS['Real'] ['img_src'] = "Real/";
 NOTAS['Dolar']['img_src'] = "Dolar/";
