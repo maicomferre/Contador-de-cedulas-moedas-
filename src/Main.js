@@ -50,15 +50,27 @@ function UpDateInfo(value)
 	
 	for(var i=0; i<12; i++){
 		if(NOTAS['value'][i] == 0)continue;
-		var img = "background-image:url('src/"+ NOTAS[ICON_TYPE]['img_src']+NOTAS['all'][i] +"');";
+		var img = "url('src/"+ NOTAS[ICON_TYPE]['img_src']+NOTAS['all'][i] +"');";
 		var type = (i < NOTAS[ICON_TYPE]['type']) ? ("Cedula") : ("Moeda");	
-		
 		var qntnotas = NOTAS['value'][i].toLocaleString(SETTINGS['lang']);
-		html +='<div class="'+type+'" id="'+i+'" style="'+img+'"><span id="QtdsNotas">'+qntnotas+'</span></div>';
+		
+		
+		
+		var htm = document.createElement('span');
+		var doc = document.createElement('div');
+		var qnot = document.createTextNode(qntnotas);
+		
+		htm.setAttribute('id','QtdsNotas');
+		htm.appendChild(qnot);
+		
+		doc.setAttribute('class',type);
+		doc.setAttribute('id',i);
+		doc.style.backgroundImage = 'url('+NOTAS[ICON_TYPE] [ 'img_file'][i]['img'].src+')';
+		
+		doc.appendChild(htm);
+		document.getElementById('Notas').appendChild(doc);
 	}
 	NOTAS['value'] = [0,0,0,0,0,0,0,0,0,0,0,0];
-	$('.Notas').html('');
-	$('.Notas').html(html);
 	checkLeftOver(value);
 }
 
@@ -71,6 +83,7 @@ $(document).ready(function(){
 	$('.rqst_0').show();
 	$('.fundo').show();
 	MenuPasso = 0;
+	loadImages();
 });
 
 

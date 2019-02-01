@@ -64,3 +64,37 @@ function checkLeftOver(value) {
 		LeftoverShowed = false;
 	}
 }
+function loadImages(){
+	if(new window.Image() === undefined){
+		alert('Erro: Este navegador está obsoleto e não suporta alguns elementos básico desta página.\nPor favor, atualize seu navegador!\n\n\
+		Error: This browser are obsolete and not have support to some elements of this page. Please, update your browser.');
+	}
+	
+	for(var i=0; i<NOTAS['tipos'].length; i++){ 
+		if(NOTAS['tipos'][i] === undefined){
+			console.log("loadImages(): Erro: Elemento NOTAS['tipos']["+i+"] = indefinido.");
+			continue;
+		}
+		if(NOTAS[NOTAS['tipos'][i]] ['img_src'] === undefined){
+			console.log("loadImages(): Erro: NOTAS[  NOTAS['tipos']["+i+"]  ] ['img_src'] = indefinido.");
+			continue;
+		}
+		var t = NOTAS['tipos'][i];
+		var value = NOTAS[t]['notas'].length + NOTAS[t]['moedas'].length;
+		for(var x = 0; x<value; x++){
+			var _src = NOTAS[t] ['img_src'] + NOTAS['all'][x];
+			NOTAS[t]['img_file'][x] = {};
+			NOTAS[t]['img_file'][x]['img'] = new Image();
+			
+			NOTAS[t]['img_file'][x]['img'].onload = function(){
+				NOTAS[t]['img_file']['loaded'] = true;
+			}
+			NOTAS[t]['img_file'][x]['img'].onerror = function(){
+				NOTAS[t]['img_file']['loaded'] = false;
+				setTimeout(function(){TRY_loadImage();},5 * 1000);
+			}
+			
+			NOTAS[t]['img_file'][x]['img'].src = _src;
+		}
+	}
+}
