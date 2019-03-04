@@ -157,3 +157,47 @@ button:hover{
 	background-color:#80FF00;
 	cursor:pointer;
 }
+/* MOBILIE */
+@media screen and (max-width:358px){
+
+	.rqst_0,.rqst_1,.rqst_2{
+		width:80vw;
+		height:70vh;		
+	}
+	.opt_option{
+		padding:10px;
+		margin:10px auto;
+		font-size:22px;
+	}	
+	h1{font-size:16px;}
+}
+@media screen and (max-width:180px){
+	.opt_option{
+		font-size:22px;
+	}
+}
+.report{
+	z-index:100;
+	position:relative;
+	top:0px;
+	position:relative;
+	text-align:center;
+	margin:0 auto;
+	font-size:26px;
+	width:50vw;
+}
+.report form{
+
+}
+.report form select{
+	font-family:sans-serif,Arial;
+	position:relative;
+	font-size:18px;
+	width:100%;
+	text-align:center;
+	padding:5px;
+}
+.report form textarea{
+	width:calc(100% - 5px);
+	min-height:95px;
+}

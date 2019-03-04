@@ -33,7 +33,6 @@
 			</div>
 		</div>
 		
-		
 		<div class="content" style="display:none;">
 		
 			<button onClick="openMenu();">Ξ</button>
@@ -49,8 +48,35 @@
 			
 			<br/>
 			
-			<p>Versão: 0.0.2</p>
+			<p>Versão: 0.0.4</p>
+			
 
+			<p><a href="javascript:ShowReportBugs();" target="_self">Reportar Bugs</a></p>
+		</div>
+		<div class="report" style="display:none;">
+			<center>
+				<h1>
+					Entre em contato!
+				</h1>
+				<h3>
+					Informe um erro, de um elogio, uma crítica!
+				</h3>
+			</center>
+			<form action="report/report.php" method="post">
+				<select id="bug_select" name="select">
+					<option value="null" selected disabled>Selecione a opção</option>
+					<option value="0">Bugs/Erros</option>
+					<option value="1">Criticas</option>
+					<option value="2">Elogios</option>
+				</select>
+				<br />
+				<br />
+				<label for="textarea">Por favor, informe o problema</label>
+				<textarea width="100%" id="textarea" name="textarea" style="resize:none;" maxlength="5000"></textarea>
+				
+				<br /><br /><br />
+				<input type="submit" value="Enviar" />
+			</form>
 		</div>
 	</body>
 </html>	

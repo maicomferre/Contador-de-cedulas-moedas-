@@ -24,6 +24,7 @@ NOTAS['all'] = [ "100.jpg"  ,"50.jpg","20.jpg","10.png","5.jpg","2.jpg","1m.jpg"
 NOTAS['Real']  [ 'img_file' ] = new Array(NOTAS['all'].length);
 NOTAS['Dolar'] [ 'img_file' ] = new Array(NOTAS['all'].length);
 
+
 NOTAS['Real']['notas'] = [100,50,20,10,5,2,1];
 NOTAS['Real']['moedas'] = [.50,.25,.10,.05];
 NOTAS['Real']['type'] = 6; 
@@ -31,6 +32,7 @@ NOTAS['Real']['type'] = 6;
 NOTAS['Dolar']['notas'] = [100,50,20,10,5,2,1];
 NOTAS['Dolar']['moedas'] = [.50,.25,.10,.05,.01];
 NOTAS['Dolar']['type'] = 7; 
+
 
 //Translation
 var SETTINGS = {};
