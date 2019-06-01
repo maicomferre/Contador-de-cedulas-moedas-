@@ -25,8 +25,7 @@ function openMenu() {
 	$('.rqst_0').show();
 	$('.fundo').show();
 	$('.content').hide();
-	MenuPasso = 0;	
-	
+	MenuPasso = 0;
 }
 function setSetting(param0,param1) {
 	switch(param0) {
@@ -34,7 +33,7 @@ function setSetting(param0,param1) {
 			$("#h1_0title").html(SETTINGS[param1].menu1Title);
 			$("#h1_1title").html(SETTINGS[param1].menu2Title);
 			$("#input").attr('placeholder',SETTINGS[param1].inputplaceholder);
-			$("#nota").html();
+			$("#notaAlerta").html(SETTINGS[param1].note);
 			SETTINGS['lang'] = param1;
 			break;
 		case "coin":
@@ -44,11 +43,9 @@ function setSetting(param0,param1) {
 			console.log("javascript error: function setSetting('"+param0+"','"+param1+"'); The first parameter is invalid.");
 			return false;
 	}
-	
 }
 function roundNumber (rnum) {
    return Math.round(rnum*Math.pow(10,2))/Math.pow(10,2);
- 
 }
 function checkLeftOver(value) {
 	if(parseFloat(value) > 0.009){

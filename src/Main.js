@@ -18,10 +18,11 @@ function UpDateInfo(value)
 	}
 	
 	if(value > 100000000000000000000){
-		$("#nota").show();
+		$("#notaAlerta").show();
 		return false;
-	}else
-		$("#nota").hide();	
+	}else{
+		$("#notaAlerta").hide();	
+	}
 	
 	value = roundNumber(parseFloat(value));
 	
